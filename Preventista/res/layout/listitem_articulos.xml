@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="horizontal"
+  android:weightSum="20">
+ 
+<TextView android:id="@+id/lblDescripcionArticuloListItem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="4"
+    android:textSize="17sp" android:width="600sp" android:padding="5px"/>
+<TextView android:id="@+id/lblStockRealArticuloListItem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="8"
+    android:textSize="17sp" android:width="600sp" android:padding="5px"/>
+<TextView android:id="@+id/lblPrecio3ArticuloListItem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="8"
+    android:textSize="17sp" android:width="600sp" android:padding="5px"/>
+
+<TextView android:id="@+id/lblIdListItem"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+  />
+ 
+</LinearLayout>

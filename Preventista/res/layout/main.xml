@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:background="@drawable/backrepeat" >
+
+    <Button
+        android:id="@+id/btnGPedidos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:drawableLeft="@drawable/icon_pedidos48x48"
+        android:background="@drawable/simple"
+        android:text="@string/lblBtnGPedidos"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        
+        />
+
+    <Button
+        android:id="@+id/btnGClientes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:text="@string/lblBtnGClientes" 
+        android:textSize="22sp" 
+        android:drawableLeft="@drawable/icon_clientes48x48"
+        android:background="@drawable/simple"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/btnGArticulos"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:text="@string/lblBtnGArticulos" 
+        android:textSize="22sp" 
+        android:drawableLeft="@drawable/icon_articulos48x48"
+        android:background="@drawable/simple"
+        android:textColor="#ffffff"
+        />
+
+    <Button
+        android:id="@+id/btnAdministracion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:text="@string/lblBtnAdministrracion"
+        android:width="600sp" 
+        android:textSize="22sp" 
+        android:drawableLeft="@drawable/icon_settings48x48"
+        android:background="@drawable/simple"
+        android:textColor="#ffffff" 
+        />
+
+</LinearLayout>

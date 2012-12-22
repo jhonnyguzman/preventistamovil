@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@+id/thShowPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+				
+				<LinearLayout
+                    android:id="@+id/tabGeneralShowPedido"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+                    
+				     <ScrollView 
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content">
+	        
+					    <TableLayout
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:orientation="vertical"
+					        android:stretchColumns="1"
+					        android:padding="2dip">
+					        
+					        <TableRow android:padding="0dip" >
+					            <TextView
+					                android:text="Id:"
+					                android:textSize="15dp"
+					                android:textStyle="bold"
+					                android:width="120sp" />
+						        <TextView
+						            android:id="@+id/tvIdPedidoEdit" 
+						            android:textSize="15dp" />
+					        </TableRow>
+					        <TableRow android:padding="0dip" >
+					            <TextView 
+						            android:text="Monto total:"
+						            android:textSize="15dp"
+						            android:textStyle="bold"
+						            android:width="120sp" />
+					        	<TextView
+					            	android:id="@+id/tvMontoTotalPedidoEdit"    
+					            	android:textSize="15dp" />
+					        </TableRow>
+					        <TableRow android:padding="0dip" >
+					            <TextView   
+					            	android:text="Monto Adeud.:"
+					            	android:textSize="15dp"
+						            android:textStyle="bold"
+						            android:width="120sp"/>
+						        <TextView
+						            android:id="@+id/tvMontoAdeudadoPedidoEdit" 
+						            android:textSize="15dp" />
+					        </TableRow>
+					        <TableRow android:padding="0dip" >
+					            <TextView         
+						            android:text="Cliente:"
+						            android:textSize="15dp"
+						            android:textStyle="bold"
+						            android:width="120sp" />
+						        <TextView
+						            android:id="@+id/tvClientePedidoEdit" 
+						            android:textSize="15dp" />
+					        </TableRow>
+					        <TableRow android:padding="0dip" >
+					            <TextView 
+						            android:textSize="15dp"
+						            android:textStyle="bold"
+						            android:width="120sp" 
+						            android:text="Estado:" />
+						        <TextView
+						            android:id="@+id/tvEstadoPedidoEdit" 
+						            android:textSize="15dp"
+						             />
+					        </TableRow>
+					        <TableRow android:padding="0dip" >
+					            <TextView 
+						            android:textSize="15dp"
+						            android:textStyle="bold"
+						            android:width="120sp" 
+						            android:text="Trámite:" />
+					            <TextView  android:id="@+id/tvTramiteDescripcion" 
+						            android:textSize="15dp"/>
+						        
+					        </TableRow>
+					        <TableRow android:padding="0dip" >
+					            <TextView 
+						            android:textSize="15dp"
+						            android:textStyle="bold"
+						            android:width="120sp" 
+						            android:text="Obs:" />
+						        <EditText
+						            android:id="@+id/etObservacionesPedidoEdit" 
+						            android:lines="5" 
+						            android:gravity="top|left" 
+						            android:inputType="textMultiLine"
+									android:scrollHorizontally="false" 
+									android:minWidth="10.0dip"
+									android:maxWidth="5.0dip"
+						            />
+					        </TableRow>
+					        <TableRow android:padding="0dip" >
+					            <TextView 
+						            android:textSize="15dp"
+						            android:textStyle="bold"
+						            android:width="120sp" 
+						            android:text="Fecha de alta:" />
+						        <TextView
+						            android:id="@+id/tvFechaAltaPedidoEdit" 
+						            android:textSize="15dp"
+						            />
+					        </TableRow>
+					        <TableRow android:padding="0dip" >
+					            <TextView 
+						         	android:textSize="15dp"
+						            android:textStyle="bold"
+						            android:width="120sp" 
+						            android:text = "Actualizado el:" />
+						        <TextView
+						            android:id="@+id/tvFechaActualizacionPedidoEdit" 
+						       		android:textSize="15dp"
+						            />
+					        </TableRow>
+					        
+					        <View android:layout_height="2px" android:layout_margin="10dip" android:background="#666666" />
+					         
+					        <TableRow android:padding="5dip" >
+					            <Button
+					                android:id="@+id/btnCerrarShowPedido" 
+					                android:layout_width="fill_parent"
+					                android:layout_height="wrap_content"
+					                android:text="Cerrar"/>
+					        </TableRow>
+	
+					   	</TableLayout>  
+					
+					 </ScrollView>
+				 
+                </LinearLayout>
+                
+				<LinearLayout
+                    android:id="@+id/tabDetallePedidoShow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+				    
+                    <RelativeLayout
+    					android:layout_width="fill_parent" 
+    					android:layout_height="fill_parent" 
+    					android:orientation="vertical">
+    	    
+						    <LinearLayout
+						        android:id="@+id/lyContentHeadPedidoDetalle"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+						        android:orientation="horizontal"
+						        android:weightSum="20">
+
+						        <TextView
+						            android:id="@+id/lblDescripcionPedidoDetalle"
+						            android:layout_width="wrap_content"
+						            android:layout_height="wrap_content"
+						            android:layout_weight="14"
+						            android:padding="2px"
+						            android:text="Descrip"
+						            android:textSize="17sp"
+						            android:textStyle="bold"
+						            android:width="60dp" />
+							    
+							    <TextView
+								    android:id="@+id/lblCantidadPedidDetalle" 
+								    android:layout_width="wrap_content"
+								    android:layout_height="wrap_content"
+								    android:layout_weight="3"
+								    android:textSize="17sp"  android:padding="2px"
+								    android:text="Cant." android:textStyle="bold"/>
+							     
+							    <TextView 
+								    android:id="@+id/lblSubtotalPedidoDetalle"
+								    android:layout_width="wrap_content"
+								    android:layout_height="wrap_content"
+								    android:layout_weight="3"
+								    android:textSize="17sp" android:padding="2px"
+								    android:text="Subt." android:textStyle="bold"/>
+						
+						     </LinearLayout>
+						     <LinearLayout
+						        android:id="@+id/lyContentPedidoDetalle"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+						        android:orientation="horizontal"
+						        android:layout_below="@+id/lyContentHeadPedidoDetalle">
+							       
+							    <ListView
+							        android:id="@+id/lvPedidoDetalle"
+							        android:layout_width="match_parent"
+							        android:layout_height="wrap_content"
+							         >
+							    </ListView>
+							    
+						    </LinearLayout>	
+
+    				</RelativeLayout>
+                
+                </LinearLayout>
+
+            </FrameLayout>
+        
+        </LinearLayout>
+        
+    </TabHost>
+
+</LinearLayout>

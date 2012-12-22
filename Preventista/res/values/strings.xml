@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, PreventistaActivity!</string>
+    <string name="app_name">Preventista</string>
+    <string name="lblUsuario">Usuario:</string>
+    <string name="lblPassword">Contraseña:</string>
+    <string name="lblBtnIngresarLogin">Ingresar</string>
+    <string name="lblBtnSalirLogin">Salir</string>
+    <string name="lblBtnGPedidos">Gestión de Pedidos</string>
+    <string name="lblBtnGClientes">Gestión de Clientes</string>
+    <string name="lblBtnGArticulos">Gestión de Articulos</string>
+    <string name="lblBtnAdministrracion">Administración</string>
+    <string name="lblBtnSaveEditCliente">Guardar</string>
+    <string name="lblBtnCancelEditCliente">Cancelar</string>
+    <string name="lblBtnSaveAddCliente">Guardar</string>
+    <string name="lblBtnCancelAddCliente">Cancelar</string>
+    <string name="lblBtnCancelEditArticulo">Cancelar</string>
+    <string name="lblBtnSaveEditArticulo">Guardar</string>
+    <string name="lblBtnCancelAddArticulo">Cancelar</string>
+    <string name="lblBtnSaveAddArticulo">Guardar</string>
+    <string name="lblBtnNewPedido">Nuevo</string>
+    <string name="lblBtnSearchPedido">Buscar</string>
+
+</resources>

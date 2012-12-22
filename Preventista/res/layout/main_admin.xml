@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backrepeat" 
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnSyncTo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Sincronizar a la nube" android:drawableTop="@drawable/syncto38x38"/>
+
+        <Button
+            android:id="@+id/btnSyncFrom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Sincronizar desde la nube" android:drawableTop="@drawable/syncfrom38x38"/>
+        
+        <Button
+            android:id="@+id/btnConfigDB"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Base de Datos Local" android:drawableTop="@drawable/configdb38x38"/>
+        
+        <Button
+            android:id="@+id/btnLogFileSql"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Copias de seguridad" android:drawableTop="@drawable/copiaseguridad38x38" />
+
+    </LinearLayout>
+
+</LinearLayout>

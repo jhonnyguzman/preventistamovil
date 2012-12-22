@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TabHost
+        android:id="@+id/thPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/tabSeleccionArticulo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                    
+                    <RelativeLayout
+    					android:layout_width="fill_parent" 
+    					android:layout_height="fill_parent" 
+    					android:orientation="vertical">
+                    
+		                    <EditText
+						        android:id="@+id/edtSearchByDescripcionArticulo"
+						        android:layout_width="match_parent"
+						        android:layout_height="25dp"
+						        android:ems="10"
+						        android:hint="Descripción"
+						        android:selectAllOnFocus="true"
+						        android:background="@drawable/borderbtngeneral" android:inputType="textCapCharacters" android:keepScreenOn="false">
+						
+						        <requestFocus />
+						    </EditText>
+					    	    
+						    <LinearLayout
+						        android:id="@+id/lyContentHead"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+						        android:orientation="horizontal"
+						        android:weightSum="20"
+						        android:layout_below="@+id/edtSearchByDescripcionArticulo" >
+						
+						        <TextView
+						            android:id="@+id/lblDescripcionArticuloSeleccion"
+						            android:layout_width="wrap_content"
+						            android:layout_height="wrap_content"
+						            android:layout_weight="14"
+						            android:padding="2px"
+						            android:text="Descrip."
+						            android:textSize="17sp"
+						            android:textStyle="bold"
+						            android:width="60dp" />
+							    
+							    <TextView
+							    android:id="@+id/lblStockArticuloSeleccion" 
+							    android:layout_width="wrap_content"
+							    android:layout_height="wrap_content"
+							    android:layout_weight="3"
+							    android:textSize="17sp"  android:padding="2px"
+							    android:text="St." android:textStyle="bold"/>
+							     
+							    <TextView 
+							    android:id="@+id/lblPrecioVentaArticuloSeleccion"
+							    android:layout_width="wrap_content"
+							    android:layout_height="wrap_content"
+							    android:layout_weight="3"
+							    android:textSize="17sp" android:padding="2px"
+							    android:text="PV1" android:textStyle="bold"/>
+							    
+							   <!--   <CheckBox
+							        android:id="@+id/chkAllArticulos"
+							        android:layout_width="wrap_content"
+							        android:layout_height="28dp"
+							        android:focusable="false" >
+								
+							  		</CheckBox>
+						  	  -->
+						     </LinearLayout>
+						     <LinearLayout
+						        android:id="@+id/lyContentSeleccionArticulo"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+						        android:orientation="horizontal"
+						        android:layout_below="@+id/lyContentHead"
+						        android:layout_above="@+id/lyToolBarSeleccionArticulo">
+							       
+							    <ListView
+							        android:id="@+id/lvSeleccionArticulos"
+							        android:layout_width="match_parent"
+							        android:layout_height="wrap_content"
+							         >
+							    </ListView>
+							    
+						    </LinearLayout>
+						    
+						    <LinearLayout
+						        android:id="@+id/lyToolBarSeleccionArticulo"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+						        android:orientation="horizontal"
+						        android:layout_alignParentBottom="true"
+						        android:background="#99333333"
+						        android:weightSum="10"
+						        >
+							     
+						        <EditText
+						            android:id="@+id/etCantidadArticulo"
+						            android:layout_width="wrap_content"
+						            android:layout_height="35dp"
+						            android:layout_weight="3"
+						            android:background="@drawable/borderbtngeneral"
+						            android:inputType="number"
+						            android:selectAllOnFocus="true"
+						            android:text="1" />
+								
+						         <EditText android:id="@+id/etMontoAcordadoArticulo"
+						            android:layout_width="wrap_content"
+						            android:layout_height="35dp"
+						            android:hint="M.A."
+						            android:layout_weight="2"
+						             android:inputType="number|numberDecimal"
+						            android:background="@drawable/borderbtngeneral"/>
+						         
+						        <EditText android:id="@+id/etSubtotalPedido"
+						            android:layout_width="wrap_content"
+						            android:layout_height="35dp"
+						            android:hint="Subt."
+						            android:layout_weight="2"
+						             android:inputType="number|numberDecimal"
+						            android:background="@drawable/borderbtngeneral"/>
+
+						        <ImageButton
+						            android:id="@+id/btnSaveLineaPedido"
+						            android:layout_width="wrap_content"
+						            android:layout_height="42dp"
+						            android:layout_weight="3"
+						            android:src="@drawable/add25x25" />
+							    
+						    </LinearLayout>
+
+    				</RelativeLayout>
+                
+                </LinearLayout>
+                	
+                <LinearLayout
+                    android:id="@+id/tabDetallePedido"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+				    
+                    <RelativeLayout
+    					android:layout_width="fill_parent" 
+    					android:layout_height="fill_parent" 
+    					android:orientation="vertical">
+    	    
+						    <LinearLayout
+						        android:id="@+id/lyContentHeadPedidoDetalle"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+						        android:orientation="horizontal"
+						        android:weightSum="20">
+
+						        <TextView
+						            android:id="@+id/lblDescripcionPedidoDetalle"
+						            android:layout_width="wrap_content"
+						            android:layout_height="wrap_content"
+						            android:layout_weight="14"
+						            android:padding="2px"
+						            android:hint="Descrip"
+						            android:textSize="17sp"
+						            android:textStyle="bold"
+						            android:width="60dp" />
+							    
+							    <TextView
+								    android:id="@+id/lblCantidadPedidDetalle" 
+								    android:layout_width="wrap_content"
+								    android:layout_height="wrap_content"
+								    android:layout_weight="3"
+								    android:textSize="17sp"  android:padding="2px"
+								    android:text="Cant." android:textStyle="bold"
+								    />
+							     
+							    <TextView 
+								    android:id="@+id/lblSubtotalPedidoDetalle"
+								    android:layout_width="wrap_content"
+								    android:layout_height="wrap_content"
+								    android:layout_weight="3"
+								    android:textSize="17sp" android:padding="2px"
+								    android:text="Subt." android:textStyle="bold"
+								    />
+						
+						     </LinearLayout>
+						     <LinearLayout
+						        android:id="@+id/lyContentPedidoDetalle"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+						        android:orientation="horizontal"
+						        android:layout_below="@+id/lyContentHeadPedidoDetalle"
+						        android:layout_above="@+id/lyToolBarPedidoDetalle">
+							       
+							    <ListView
+							        android:id="@+id/lvPedidoDetalle"
+							        android:layout_width="match_parent"
+							        android:layout_height="wrap_content"
+							         >
+							    </ListView>
+							    
+						    </LinearLayout>
+						    
+						    <LinearLayout
+						        android:id="@+id/lyToolBarPedidoDetalle"
+						        android:layout_width="match_parent"
+						        android:layout_height="wrap_content"
+						        android:orientation="horizontal"
+						        android:layout_alignParentBottom="true"
+						        android:background="#99333333"
+						        android:weightSum="10"
+						        >
+							     
+						        <Button
+						            android:id="@+id/btnEditPedidoDetalle"
+						            android:layout_width="wrap_content"
+						            android:layout_height="40dp"
+						            android:layout_weight="5"
+						            android:text="Editar"
+									/>
+								
+						        <Button android:id="@+id/btnDeletePedidoDetalle"
+						            android:layout_width="wrap_content"
+						            android:layout_height="40dp"			          
+						            android:layout_weight="5"
+						            android:text="Eliminar"
+						           />	    
+						    </LinearLayout>
+
+    				</RelativeLayout>
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

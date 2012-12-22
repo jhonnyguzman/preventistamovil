@@ -1,0 +1,18 @@
+<!--  <?xml version="1.0" encoding="utf-8"?>
+<bitmap
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:src="@drawable/body_bg_new4"
+android:tileMode="repeat"
+android:dither="true" />-->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape>
+        <gradient
+            android:angle="-90"
+            android:startColor="#FF0E7BC4"
+            android:endColor="#FF1A1D1F"
+            android:type="linear" />
+    </shape>
+</item>
+</selector>

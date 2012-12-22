@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	
+    <RelativeLayout
+		android:layout_width="match_parent" 
+		android:layout_height="wrap_content" 
+		android:orientation="vertical">
+		
+        <ScrollView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lyFoodBotonera">
+        
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical" >
+		
+		        <TextView
+		            android:id="@+id/textView1"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="ID" android:textSize="18sp"/>
+				
+		        <EditText
+			        android:id="@+id/edtIdCliente"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:ems="10"
+			        android:inputType="number" >
+		    	</EditText>
+		    	
+		        <TextView
+			        android:id="@+id/textView2"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="Nombre"
+			        android:textSize="18sp" />
+		
+		        <EditText
+		            android:id="@+id/edtNombreCliente"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:ems="10" android:inputType="textCapCharacters"/>
+				 <requestFocus />
+		        <TextView
+		            android:id="@+id/textView3"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Apellido"
+		            android:textSize="18sp" />
+		
+		        <EditText
+		            android:id="@+id/edtApellidoCliente"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:ems="10" android:inputType="textCapCharacters"/>
+		
+		        <TextView
+		            android:id="@+id/textView4"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Dirección"
+		            android:textSize="18sp" />
+		
+		        <EditText
+		            android:id="@+id/edtDireccionCliente"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:ems="10"
+		             android:inputType="textCapCharacters"/>
+		
+		        <TextView
+		            android:id="@+id/textView5"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Teléfono"
+		            android:textSize="18sp" />
+		
+		        <EditText
+		            android:id="@+id/edtTelefonoCliente"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:ems="10" android:inputType="phone"/>
+		
+		        <TextView
+		            android:id="@+id/textView6"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Categoria"
+		            android:textSize="18sp" />
+		
+		        <EditText
+		            android:id="@+id/edtCategoriaCliente"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:ems="10"
+		            android:inputType="number" />
+		        
+		    </LinearLayout>
+		    
+		 </ScrollView>
+	
+	    <LinearLayout
+	        android:id="@+id/lyFoodBotonera"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:layout_alignParentBottom="true" 
+	        android:weightSum="10" >
+	
+	        <Button
+	            android:id="@+id/btnSaveEditCliente"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/lblBtnSaveEditCliente"
+	            android:layout_weight="5" android:drawableLeft="@drawable/save25x25"/>
+	
+	        <Button
+	            android:id="@+id/btnCancelEditCliente"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/lblBtnCancelEditCliente"
+	            android:layout_weight="5" android:drawableLeft="@drawable/cancel25x25"/>
+	
+	    </LinearLayout>
+	
+	</RelativeLayout>
+
+</LinearLayout>

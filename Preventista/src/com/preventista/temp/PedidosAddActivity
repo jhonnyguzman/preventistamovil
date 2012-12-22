@@ -1,0 +1,377 @@
+package com.preventista.main;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.TabHost;
+import android.widget.TabHost.TabSpec;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.preventista.db.DBArticulosAdapter;
+import com.preventista.entidades.Articulos;
+
+public class PedidosAddActivity extends Activity{
+	
+	private static final int CATCLIENTE1 = 1;
+	private static final int CATCLIENTE2 = 2;
+	private static final int CATCLIENTE3 = 3;
+	
+	private int pos = -1;
+	private static int flagChkALl = 0;
+	private static int catcliente;
+	
+	private ListView lvArticulos;
+	private ArrayList<Articulos> resultado = new ArrayList<Articulos>();
+	
+	// Field where user enters his search criteria
+    private EditText searchByDescripcion;
+    private CheckBox chkAll;
+    private ImageButton btnSaveLinea;
+    private TabHost thPedidos;
+    private Bundle bundle = null;
+    
+    private AdaptadorSeleccionArticulos adaptador;
+    
+    
+    private static class ViewHolder {
+        TextView lblDescripcion;
+        TextView lblStockReal;
+        TextView lblPrecioVenta;
+        TextView lblId;
+        CheckBox checkBoxArticulo; 
+    }
+    
+    
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		
+		//Con esto, eliminamos la barra de tareas de Android y hacemos que fullscreen de la actividad
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		
+		setContentView(R.layout.add_form_pedidos);
+		
+		lvArticulos = (ListView) findViewById(R.id.lvSeleccionArticulos);
+		thPedidos = (TabHost) findViewById(R.id.thPedidos);
+		searchByDescripcion = (EditText) findViewById(R.id.edtSearchByDescripcionArticulo);
+		chkAll = (CheckBox) findViewById(R.id.chkAllArticulos);
+		btnSaveLinea = (ImageButton) findViewById(R.id.btnSaveLineaPedido);
+		
+		//configuracion del tabhost
+		thPedidos.setup();
+		TabSpec spec = thPedidos.newTabSpec("SELECCIONARTICULO");
+		spec.setIndicator("Home");
+		spec.setContent(R.id.tabSeleccionArticulo);
+		thPedidos.addTab(spec);
+		
+		spec = thPedidos.newTabSpec("DETALLEPEDIDO");
+		spec.setIndicator("Detalle");
+		spec.setContent(R.id.tabDetallePedido);
+		thPedidos.addTab(spec);
+		
+		bundle = getIntent().getExtras();
+		
+		catcliente = Integer.parseInt(bundle.getString("CLIENTESCATEGORIA_ID"));
+		checkCategoriaCliente();
+		
+		showArticulos();
+		
+		// When item is tapped, toggle checked properties of CheckBox and Articulos.
+		lvArticulos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	      @Override
+	      public void onItemClick( AdapterView<?> parent, View item, 
+	                               int position, long id) {
+	        Articulos articulo = adaptador.getItem( position );
+	        articulo.toggleChecked();
+	        ViewHolder viewHolder = (ViewHolder) item.getTag();
+	        viewHolder.checkBoxArticulo.setChecked( articulo.isChecked() );
+	        pos = position;
+			//openOptionsMenu();
+	      }
+	    });
+		
+		chkAll.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+		    @Override
+		    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		        if(isChecked){
+		        	flagChkALl = 1;
+		        }else{
+		        	flagChkALl = 2;
+		        }
+		        adaptador.notifyDataSetChanged();
+		    
+		    }
+		});
+		
+		btnSaveLinea.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Toast.makeText(PedidosAddActivity.this, "Se hizo click", Toast.LENGTH_SHORT).show();
+			}
+			
+		});
+		
+		//config height of the tabhost
+		thPedidos.getTabWidget().getChildAt(0).getLayoutParams().height = 45;
+		thPedidos.getTabWidget().getChildAt(1).getLayoutParams().height = 45;
+	}
+	
+	@Override
+    protected void onResume() {
+        super.onResume();
+        //searchByApellido.requestFocus();
+
+        searchByDescripcion.postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                InputMethodManager keyboard = (InputMethodManager)
+                getSystemService(Context.INPUT_METHOD_SERVICE);
+                keyboard.showSoftInput(searchByDescripcion, 0);
+            }
+        },200);
+    }
+	
+	public void showArticulos()
+	{
+		 DBArticulosAdapter dbarticulo = new DBArticulosAdapter(this);
+		 resultado = dbarticulo.getAllArticulos();
+	 	 adaptador =  new AdaptadorSeleccionArticulos(this);
+	 	 lvArticulos.setAdapter(adaptador);
+	 	 
+	 	 searchByDescripcion.addTextChangedListener(new TextWatcher() {
+
+            // As the user types in the search field, the list is
+            @Override
+            public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+                AlterAdapter();
+            }
+
+            // Not used for this program
+            @Override
+            public void afterTextChanged(Editable arg0) {
+
+            }
+
+            // Not uses for this program
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+	}
+	
+	
+	/**
+	 * Opciones de Menu de la sección principal de clientes
+	 * */
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{	
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.options_menu_articulos, menu);
+		return true;
+	}
+	
+	@Override 
+	public boolean onOptionsItemSelected(MenuItem item)
+	{	
+		switch(item.getItemId()){
+		
+		case R.id.mnAddArticulo:
+			Intent ir_a_articulo_nuevo = new Intent("com.preventista.main.ADDARTICULO");
+			startActivity(ir_a_articulo_nuevo);
+			return true;
+			
+		case R.id.mnEditArticulo:
+			if(pos == -1)
+				Toast.makeText(this, "Selecciona un Articulo!", Toast.LENGTH_SHORT).show();
+			else{
+				Intent ir_a_articulos_editar = new Intent("com.preventista.main.EDITARTICULO");
+				Bundle bolsa = new Bundle();
+				bolsa.putString("ID", Integer.toString(resultado.get(pos).get_id()));
+				bolsa.putString("DESCRIPCION", resultado.get(pos).getDescripcion());
+				bolsa.putString("PRECIOCOMPRA", Float.toString(resultado.get(pos).getPreciocompra()));
+				bolsa.putString("STOCKREAL", Integer.toString(resultado.get(pos).getStockreal()));
+				bolsa.putString("STOCKMIN", Integer.toString(resultado.get(pos).getStockmin()));
+				bolsa.putString("STOCKMAX", Integer.toString(resultado.get(pos).getStockmax()));
+				bolsa.putString("RUBROS_ID", Integer.toString(resultado.get(pos).getRubros_id()));
+				bolsa.putString("OBSERVACIONES", resultado.get(pos).getObservaciones());
+				bolsa.putString("PRECIO1", Float.toString(resultado.get(pos).getPrecio1()));
+				bolsa.putString("PRECIO2", Float.toString(resultado.get(pos).getPrecio2()));
+				bolsa.putString("PRECIO3", Float.toString(resultado.get(pos).getPrecio3()));
+				bolsa.putString("PORCENTAJE1", Float.toString(resultado.get(pos).getPorcentaje1()));
+				bolsa.putString("PORCENTAJE2", Float.toString(resultado.get(pos).getPorcentaje2()));
+				bolsa.putString("PORCENTAJE3", Float.toString(resultado.get(pos).getPorcentaje3()));
+				bolsa.putString("ESTADO", Integer.toString(resultado.get(pos).getEstado()));
+				bolsa.putString("MARCAS_ID", Integer.toString(resultado.get(pos).getMarcas_id()));
+				bolsa.putString("CREATED_AT", resultado.get(pos).getUpdated_at());
+				bolsa.putString("UPDATED_AT", resultado.get(pos).getUpdated_at());
+				
+				ir_a_articulos_editar.putExtras(bolsa);
+				startActivity(ir_a_articulos_editar);
+			}
+			return true;
+		
+		case R.id.mnMainMenu:
+			Intent ir_main_menu = new Intent(PedidosAddActivity.this,PreventistaActivity.class); 
+			startActivity(ir_main_menu);
+			return true;
+			
+		default:
+            return super.onOptionsItemSelected(item);
+		}
+		
+	}
+	
+	
+	private class AdaptadorSeleccionArticulos extends ArrayAdapter<Articulos>{
+    	
+    	//private LayoutInflater inflater;
+    	Activity context;
+    	private boolean[] itemSelection;
+    	
+    	AdaptadorSeleccionArticulos(Activity context) {
+    		super(context, R.layout.listitem_seleccion_articulos, resultado);
+    		//inflater = LayoutInflater.from(context) ;
+    		this.context = context;
+    		this.itemSelection = new boolean[resultado.size()];
+    	}
+    	
+    	public View getView(final int position, View convertView, ViewGroup parent) {
+    		Articulos articulo = (Articulos) this.getItem( position ); 
+    	    View item = convertView;
+		    final ViewHolder holder;
+		    
+		    if(item == null)
+		    {
+		    	LayoutInflater inflater = context.getLayoutInflater();
+				item = inflater.inflate(R.layout.listitem_seleccion_articulos, null);
+				
+				holder = new ViewHolder();
+				
+				holder.lblDescripcion = (TextView) item.findViewById(R.id.lblDescripcionArticuloSeleccionListItem);
+				holder.lblStockReal = (TextView) item.findViewById(R.id.lblStockRealArticuloSeleccionListItem);
+				holder.lblPrecioVenta = (TextView) item.findViewById(R.id.lblPrecioVentaArticuloSeleccionListItem);
+				holder.lblId = (TextView) item.findViewById(R.id.lblIdArticuloSeleccionListItem);
+				holder.checkBoxArticulo = (CheckBox) item.findViewById(R.id.CheckBoxArticuloSeleccion);
+		 
+				// If CheckBox is toggled, update the planet it is tagged with.
+				/*holder.checkBoxArticulo.setOnClickListener( new View.OnClickListener() {
+		          public void onClick(View v) {
+		            CheckBox cb = (CheckBox) v ;
+		            Articulos articulo = (Articulos) cb.getTag();
+		            articulo.setChecked(cb.isChecked() );
+		          }
+		        }); */
+
+				item.setTag(holder);
+				
+		    }else{
+		    	holder = (ViewHolder)item.getTag();
+		    }
+			
+		    holder.checkBoxArticulo.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+				@Override
+				public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+					itemSelection[position] = holder.checkBoxArticulo.isChecked();
+					//Log.d("CHECK", Boolean.toString(itemSelection[position]));
+				}
+			});
+		    
+		    //Tag the CheckBox with the Planet it is displaying, so that we can
+		    // access the articulo in onClick() when the CheckBox is toggled.
+		    holder.checkBoxArticulo.setTag(articulo);
+			
+		    //Display articulo data
+		    holder.lblDescripcion.setText(articulo.getDescripcion());
+			holder.lblStockReal.setText(Integer.toString(articulo.getStockreal()));
+			
+			holder.lblId.setText(Integer.toString(articulo.get_id()));
+			
+			if(catcliente == CATCLIENTE1) holder.lblPrecioVenta.setText(Float.toString(articulo.getPrecio1()));
+			else if(catcliente == CATCLIENTE2) holder.lblPrecioVenta.setText(Float.toString(articulo.getPrecio2()));
+			else if(catcliente == CATCLIENTE3) holder.lblPrecioVenta.setText(Float.toString(articulo.getPrecio3()));
+			
+			if(flagChkALl == 1){
+				articulo.setChecked(true);
+				holder.checkBoxArticulo.setChecked(articulo.isChecked());
+			/*}else if(flagChkALl == 2){
+				articulo.setChecked(false);
+				holder.checkBoxArticulo.setChecked(articulo.isChecked());*/
+			}else{
+				holder.checkBoxArticulo.setChecked(itemSelection[position]);
+			}
+			return(item);
+		}
+    }
+	
+	
+	 // Filters list of contacts based on user search criteria. If no information is filled in, contact list will be blank.
+    private void AlterAdapter() 
+    {
+		resultado.clear(); 
+		ArrayList<Articulos> items;
+		DBArticulosAdapter dbarticulo = new DBArticulosAdapter(this);
+		
+		if (searchByDescripcion.getText().toString().length() != 0){
+			 items = dbarticulo.getArticulos(searchByDescripcion.getText().toString().toUpperCase());
+		}else{
+			 items = dbarticulo.getAllArticulos();
+		}
+		
+		for (int i = 0; i < items.size(); i++) {
+			resultado.add(items.get(i));
+		}
+		adaptador.notifyDataSetChanged();
+    		
+    }
+    
+    
+    private void checkCategoriaCliente()
+    {
+    	TextView lblPrecioVenta = (TextView) findViewById(R.id.lblPrecioVentaArticuloSeleccion);
+    	
+    	switch(catcliente){
+    	case CATCLIENTE1:
+    		lblPrecioVenta.setText("PV1");
+    		break;
+    	case CATCLIENTE2:
+    		lblPrecioVenta.setText("PV2");
+    		break;
+    	case CATCLIENTE3:
+    		lblPrecioVenta.setText("PV3");
+    		break;
+    	}
+    }
+
+}

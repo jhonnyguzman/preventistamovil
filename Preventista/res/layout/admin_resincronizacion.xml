@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backrepeat"
+    android:padding="5dp"  >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atención!"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:layout_marginBottom="10dp"/>
+    
+    <TextView
+        android:id="@+id/tvCopiaSeleccionada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:text="En esta sección puedes Re-sincronizar la copia de seguridad de los datos generados en el móvil con la aplicación Web."
+        android:textColor="@android:color/background_light" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:text="Ten en cuenta que si intentas Re-sincronizar una copia de seguridad con una fecha demasiado antigua puede generar serios problemas de inconsistencia de datos tanto en la aplicación móvil como en la aplicación web."
+        android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Se recomienda que si el proceso de sincronización de la forma normal falla por algun motivo de conectividad a internet, siempre se seleccione la copia de seguridad cuya fecha sea la mas actual para llevar a cabo la re-sincronización."
+        android:textColor="@android:color/background_light"
+        android:textStyle="bold" />
+	
+    <Button 
+        android:id="@+id/btnResincronizar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Re-sincronizar"
+        android:layout_marginTop="30dp"/>
+</LinearLayout>

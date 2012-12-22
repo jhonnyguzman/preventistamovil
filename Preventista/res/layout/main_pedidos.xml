@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:background="@drawable/backrepeat" >
+
+    <Button
+        android:id="@+id/btnNewPedido"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:drawableLeft="@drawable/icon_new48x48"
+        android:background="@drawable/simple"
+        android:text="@string/lblBtnNewPedido"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        
+        />
+
+    <Button
+        android:id="@+id/btnSearchPedido"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:text="@string/lblBtnSearchPedido" 
+        android:textSize="22sp" 
+        android:drawableLeft="@drawable/icon_search48x48"
+        android:background="@drawable/simple"
+        android:textColor="#ffffff" />
+
+</LinearLayout>

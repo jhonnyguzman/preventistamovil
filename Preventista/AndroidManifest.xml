@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.preventista.main"
+    android:versionCode="2"
+    android:versionName="2.0" 
+   >
+
+    <uses-sdk android:minSdkVersion="8" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.INTERNET"/>
+   	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	
+    <application
+        android:icon="@drawable/logo"
+        android:label="Preventista"
+        >
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name"  
+             >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PreventistaActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.preventista.main.MAINMENU" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ClientesActivity"
+            android:label="Gestión de Clientes" >
+            <intent-filter>
+                <action android:name="com.preventista.main.MAINCLIENTES" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ClientesEditActivity"
+            android:label="Edición de Cliente" >
+            <intent-filter>
+                <action android:name="com.preventista.main.EDITCLIENTE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ClientesAddActivity"
+            android:label="Nuevo Cliente" >
+            <intent-filter>
+                <action android:name="com.preventista.main.ADDCLIENTE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ArticulosActivity"
+            android:label="Gestión de Articulos" >
+            <intent-filter>
+                <action android:name="com.preventista.main.MAINARTICULOS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ArticulosAddActivity"
+            android:label="Nuevo Articulo" >
+            <intent-filter>
+                <action android:name="com.preventista.main.ADDARTICULO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ArticulosEditActivity"
+            android:label="Edición de Articulo" >
+            <intent-filter>
+                <action android:name="com.preventista.main.EDITARTICULO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PedidosActivity"
+            android:label="Gestión de Pedidos" >
+            <intent-filter>
+                <action android:name="com.preventista.main.MAINPEDIDOS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ClientesSeleccionActivity"
+            android:label="Selecciona un cliente"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden">
+            <intent-filter>
+                <action android:name="com.preventista.main.SELECCIONCLIENTE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PedidosAddActivity"
+            android:label="Nuevo Pedido"
+            android:windowSoftInputMode="adjustResize" 
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+            
+            <intent-filter>
+                <action android:name="com.preventista.main.ADDPEDIDO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PedidosSearchActivity"
+            android:label="Búsqueda de pedidos"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden">
+            
+            <intent-filter>
+                <action android:name="com.preventista.main.SEARCHPEDIDOS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PedidosShowActivity"
+            android:label="Pedido"
+            android:theme="@android:style/Theme.Dialog"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"  >
+            
+            <intent-filter>
+                <action android:name="com.preventista.main.SHOWPEDIDO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PedidosEditActivity"
+            android:label="Edición de pedido"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden" >
+            
+            <intent-filter>
+                <action android:name="com.preventista.main.EDITPEDIDO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Prefers"
+            android:label="Preferencias"
+            android:theme="@android:style/Theme.Dialog" >
+            
+            <intent-filter>
+                <action android:name="com.preventista.main.PREFERENCIAS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AdminActivity"
+            android:label="Administración"
+            >
+            
+            <intent-filter>
+                <action android:name="com.preventista.main.MAINADMIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SyncTo"
+            android:label=""
+            android:theme="@android:style/Theme.Dialog" >
+            
+            <intent-filter>
+                <action android:name="com.preventista.main.MAINSYNCTO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SyncFrom"
+            android:label=""
+            android:theme="@android:style/Theme.Dialog" >
+            
+            <intent-filter>
+                <action android:name="com.preventista.main.MAINSYNCFROM" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CuentaCorrienteActivity"
+            android:label="Cuenta Corriente"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden">
+          
+            <intent-filter>
+                <action android:name="com.preventista.main.CUENTACORRIENTE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PedidosAdeudadosActivity"
+            android:label="Pedidos Adeudados"
+            android:theme="@android:style/Theme.Dialog">
+          
+            <intent-filter>
+                <action android:name="com.preventista.main.PEDIDOSADEUDADOS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PedidosPagadosActivity"
+            android:label="Pedidos Pagados"
+            android:theme="@android:style/Theme.Dialog">
+          
+            <intent-filter>
+                <action android:name="com.preventista.main.PEDIDOSPAGADOS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DeudasPagadasActivity"
+            android:label="Deudas Pagadas"
+            android:theme="@android:style/Theme.Dialog">
+          
+            <intent-filter>
+                <action android:name="com.preventista.main.DEUDASPAGADAS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DeudasSinPagarActivity"
+            android:label="Deudas Sin Pagar"
+            android:theme="@android:style/Theme.Dialog">
+          
+            <intent-filter>
+                <action android:name="com.preventista.main.DEUDASSINPAGAR" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PagosRealizadosActivity"
+            android:label="Pagos Realizados"
+            android:theme="@android:style/Theme.Dialog">
+          
+            <intent-filter>
+                <action android:name="com.preventista.main.PAGOSREALIZADOS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RealizarPagoActivity"
+            android:label="Seleccione un pedido">
+          
+            <intent-filter>
+                <action android:name="com.preventista.main.REALIZARPAGO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ConfigDB"
+            android:label="Actualización de Base de Datos">
+          
+            <intent-filter>
+                <action android:name="com.preventista.main.MAINCONFIGDB" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Backuplogs"
+            android:label="Copias de seguridad">
+          
+            <intent-filter>
+                <action android:name="com.preventista.main.MAINBACKUPLOGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Resincronizacion"
+            android:label="Re-sincronización">
+          
+            <intent-filter>
+                <action android:name="com.preventista.main.RESINCRONIZACION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

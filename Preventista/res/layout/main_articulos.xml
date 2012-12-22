@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/edtSearchByDescripcionArticulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Descripción" >
+
+        <requestFocus />
+    </EditText>
+	<LinearLayout
+		  xmlns:android="http://schemas.android.com/apk/res/android"
+		  android:layout_width="match_parent"
+		  android:layout_height="wrap_content"
+		  android:orientation="horizontal"
+		  android:weightSum="20">
+        
+	    <TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="4"
+	    android:textSize="17sp" android:width="600sp" android:padding="5px"
+	    android:text="Descrip." android:textStyle="bold"/>
+	    
+	    <TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="8"
+	    android:textSize="17sp" android:width="600sp" android:padding="5px"
+	    android:text="St." android:textStyle="bold"/>
+	     
+	    <TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_weight="8"
+	    android:textSize="17sp" android:width="600sp" android:padding="5px"
+	    android:text="PV3" android:textStyle="bold"/>
+	    
+     </LinearLayout>   
+    <ListView
+        android:id="@+id/lvArticulos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

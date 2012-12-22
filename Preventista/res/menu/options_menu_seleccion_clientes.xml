@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+<item 
+    android:id="@+id/mnNextStep" android:title="Siguiente"
+    android:icon="@drawable/next32x32"
+      ></item>
+<item 
+    android:id="@+id/mnMainMenu" android:title="Principal"
+    android:icon="@drawable/home32x32"
+      ></item>
+</menu>

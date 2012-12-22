@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+<item 
+    android:id="@+id/mnAddCliente" android:title="Agregar"
+    android:icon="@drawable/add32x32"
+      ></item>
+<item 
+    android:id="@+id/mnEditCliente" android:title="Editar"
+    android:icon="@drawable/edit32x32"
+      ></item>
+<item 
+    android:id="@+id/mnCcCliente" android:title="CC"
+    android:icon="@drawable/cuentacorriente32x32"
+      ></item>
+<item 
+    android:id="@+id/mnMainMenu" android:title="Principal"
+    android:icon="@drawable/home32x32"
+      ></item>
+</menu>

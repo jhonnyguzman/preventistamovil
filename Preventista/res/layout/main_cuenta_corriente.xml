@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backrepeat" >
+    
+	<ScrollView  android:layout_width="fill_parent"
+	    android:layout_height="fill_parent">
+	    
+	    <LinearLayout android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+
+            <TableLayout
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical"
+			        android:stretchColumns="1"
+			        android:padding="2dip">
+			        
+                	<TableRow
+			            android:layout_width="wrap_content"
+			            android:padding="4dip" >
+
+			            <TextView
+			                android:text="Cliente:"
+			                android:textSize="17dp"
+			                android:textStyle="bold"
+			                android:width="120sp" />
+				        <TextView
+				            android:id="@+id/tvApellNombreCliente" 
+				            android:textSize="17dp" />
+			        </TableRow>
+			        <TableRow
+			            android:layout_width="wrap_content"
+			            android:padding="4dip" >
+
+			            <TextView
+			                android:text="Pagado: $"
+			                android:textSize="17dp"
+			                android:textStyle="bold"
+			                android:width="120sp" />
+				        <TextView
+				            android:id="@+id/tvCCHaber" 
+				            android:textSize="17dp" />
+			        </TableRow>
+			        <TableRow android:padding="4dip" >
+			            <TextView 
+				            android:text="Debe: $"
+				            android:textSize="17dp"
+				            android:textStyle="bold"
+				            android:width="120sp" />
+			        	<TextView
+			            	android:id="@+id/tvCCDebe"    
+			            	android:textSize="17dp" />
+			        </TableRow>
+			 </TableLayout>
+
+	        <LinearLayout android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            android:layout_marginTop="20dp">
+	            <Button
+	                android:id="@+id/btnPedidosPagados" 
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:text="Pedidos Pagados"
+	                android:textSize="18dp"
+	                android:gravity="center_horizontal"
+	                android:layout_marginLeft="15dp"
+	                android:layout_marginRight="15dp"
+	                />
+	            <Button
+	                android:id="@+id/btnPedidosAdeudados"  
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:text="Pedidos Adeudados"
+	                android:textSize="18dp"
+	                android:gravity="center_horizontal"
+	                android:layout_marginLeft="15dp"
+	                android:layout_marginRight="15dp"
+	                />
+	            <!--  <Button
+	                android:id="@+id/btnDeudasPagadas" 
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:text="Deudas Pagadas"
+	                android:textSize="18dp"
+	                android:gravity="center_horizontal"
+	                android:layout_marginLeft="15dp"
+	                android:layout_marginRight="15dp"
+	                />
+	            <Button
+	                android:id="@+id/btnDeudasSinPagar"  
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:text="Deudas sin pagar"
+	                android:textSize="18dp"
+	                android:gravity="center_horizontal"
+	                android:layout_marginLeft="15dp"
+	                android:layout_marginRight="15dp"
+	                />-->
+	            <Button
+	                android:id="@+id/btnPagosRealizados"  
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:text="Pagos Realizados"
+	                android:textSize="18dp"
+	                android:gravity="center_horizontal"
+	                android:layout_marginLeft="15dp"
+	                android:layout_marginRight="15dp"
+	                />
+	            <Button
+	                android:id="@+id/btnRealizarPago"  
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:text="Realizar Pago"
+	                android:textSize="18dp"
+	                android:gravity="center_horizontal"
+	                android:layout_marginLeft="15dp"
+	                android:layout_marginRight="15dp"
+	                />
+	            <Button
+	                android:id="@+id/btnVolver"  
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:text="Volver"
+	                android:textSize="18dp"
+	                android:gravity="center_horizontal"
+	                android:layout_marginLeft="15dp"
+	                android:layout_marginRight="15dp"
+	                />
+	            
+	        </LinearLayout>
+	    </LinearLayout>
+	</ScrollView>
+</LinearLayout>

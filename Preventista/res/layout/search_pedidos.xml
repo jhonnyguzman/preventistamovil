@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+	    <EditText
+	        android:id="@+id/edtSearchByFechaAltaPedido"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:focusable="false" >
+	      
+	    </EditText>
+	</LinearLayout>
+	
+	<LinearLayout
+		  xmlns:android="http://schemas.android.com/apk/res/android"
+		  android:layout_width="match_parent"
+		  android:layout_height="wrap_content"
+		  android:orientation="horizontal"
+		  android:weightSum="20">
+        
+	    <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="5"
+		    android:textSize="17sp" 
+		    android:width="600sp" 
+		    android:padding="2px"
+		    android:text="Cliente"
+		    android:textStyle="bold"/>
+	    
+	    <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="7"
+		    android:textSize="17sp" 
+		    android:width="600sp" 
+		    android:padding="2px"
+		    android:text="Fecha" 
+		    android:textStyle="bold"/>
+	     
+	    <TextView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="8"
+		    android:textSize="17sp" 
+		    android:width="600sp" 
+		    android:padding="2px"
+		    android:text="Monto" 
+		    android:textStyle="bold"/>
+	    
+     </LinearLayout>   
+    <ListView
+        android:id="@+id/lvSearchPedidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item 
+	    android:id="@+id/mnFinalizarCargaPedido" android:title="Finalizar"
+	    android:icon="@drawable/tick32x32"
+	></item>
+	<item 
+	    android:id="@+id/mnIrSeleccionCliente" android:title="Selección Cliente"
+	    android:icon="@drawable/clientes32x32"
+	      >
+	</item>
+	<item 
+	    android:id="@+id/mnMainMenu" android:title="Principal"
+	    android:icon="@drawable/home32x32"
+	></item>
+	<item 
+	    android:id="@+id/mnCCPedidos" android:title="Cta. Corriente"
+	    android:icon="@drawable/cuentacorriente32x32"
+	></item>
+</menu>

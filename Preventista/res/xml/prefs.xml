@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <EditTextPreference
+        android:title="Articulos _ID"
+        android:key="etPrefArticulosID"
+        android:defaultValue="50000"
+        android:summary="Config from _ID"
+        >
+    </EditTextPreference>
+    <EditTextPreference
+        android:title="Clientes _ID"
+        android:key="etPrefClientesID"
+        android:defaultValue="50000"
+        android:summary="Config from _ID"
+        >
+    </EditTextPreference>
+    <EditTextPreference
+        android:title="Pedidos _ID"
+        android:key="etPrefPedidosID"
+        android:defaultValue="50000"
+        android:summary="Config from _ID"
+        >
+    </EditTextPreference>
+    <EditTextPreference
+        android:title="Pedido detalle _ID"
+        android:key="etPrefPedidoDetalleID"
+        android:defaultValue="50000"
+        android:summary="Config from _ID"
+        >
+     </EditTextPreference>
+     <EditTextPreference
+        android:title="Pagos _ID"
+        android:key="etPrefPagosID"
+        android:defaultValue="50000"
+        android:summary="Config from _ID"
+        >
+    </EditTextPreference>
+    <EditTextPreference
+        android:title="Pagos Pedidos _ID"
+        android:key="etPrefPagosPedidosID"
+        android:defaultValue="50000"
+        android:summary="Config from _ID"
+        >
+    </EditTextPreference>
+	<EditTextPreference
+        android:title="Pagos Deudas _ID"
+        android:key="etPrefPagosDeudasID"
+        android:defaultValue="50000"
+        android:summary="Config from _ID"
+        >
+    </EditTextPreference>
+    
+</PreferenceScreen>

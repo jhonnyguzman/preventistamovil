@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backrepeat"
+    android:padding="5dp"  >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atención!"
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Si es la primera vez que ejecutas esta aplicación debes hacer click en el botón de abajo. Esto va a actualizar la base de datos local del teléfono con los datos de la Base de datos remota."
+        android:textColor="@android:color/background_light" />
+	
+    <Button 
+        android:id="@+id/btnUpdateDB"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Cargar la Base de Datos Local"
+        android:layout_marginTop="30dp"/>
+</LinearLayout>

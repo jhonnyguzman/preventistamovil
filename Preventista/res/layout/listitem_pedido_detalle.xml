@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="horizontal"
+  android:weightSum="20">
+ 
+<TextView android:id="@+id/lblDescripcionPedidoDetalleListItem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="14"
+    android:textSize="17sp" android:padding="2px"
+    android:width="60dp"/>
+
+<TextView android:id="@+id/lblCantidadPedidoDetalleListItem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="3"
+    android:textSize="17sp" android:padding="2px"/>
+
+<TextView android:id="@+id/lblSubtotalPedidoDetalleListItem"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="3"
+    android:textSize="17sp" android:padding="2px"/>
+  
+<TextView android:id="@+id/lblIdPedidoDetalleListItem"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+  />
+ 
+</LinearLayout>
